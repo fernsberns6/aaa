@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <title>Productlist App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="animate.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body> 
+ 
+
+
+<div class="container" ng-controller="AppmntCtrl">
+<ul class="nav nav-tabs"   role="tablist">
+	<li role="presentation" >
+		<a href="index.html" role="tab">Index</a>
+	</li>
+	<li role="presentation" class="active">
+		<a href="Appointment_Display.html" role="tab">All Appointments</a>
+	</li>
+	<li role="presentation">
+		<a href="Appointment_New.html" role="tab">New</a>
+	</li>
+	<li role="presentation">
+		<a href="Appointment_Update.html" role="tab">Update</a>
+	</li>
+	<li role="presentation">
+		<a href="Doctor_New.html" role="tab">AddDoctor</a>
+	</li>
+	<li role="presentation">
+		<a href="Doctor_Update.html" role="tab">UpdateDoctor</a>
+	</li>
+	<li role="presentation" >
+		<a href="Doctor_Display.html" role="tab">All Doctor</a>
+	</li>
+</ul>
+
+	<table class="table animated fadeIn">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Doctor</th>
+				<th>Date and Time</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+
+			<tbody>
+		
+			<tr ng-repeat="Appointment in ListOfAppointment">
+				<td>{{Appointment.FName}}</td>
+				<td>{{Appointment.LName}}</td>
+				<td>{{Appointment.DName}}</td>
+				<td>{{Appointment.DateTime | date:"yyyy/MM/dd 'at' h:mma"}}</td>				
+			</tr>
+			</tbody>
+		
+	</table>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+
+</body>
+</html>
+
+
+
+
+
